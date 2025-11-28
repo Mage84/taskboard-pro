@@ -1,8 +1,8 @@
 import { AsyncPipe } from '@angular/common';
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Task } from '../core/model/task';
-import { TaskService } from '../core/service/task.service';
+import { Task } from '../../core/model/task';
+import { TaskService } from '../../core/service/task.service';
 
 @Component({
   selector: 'app-task',

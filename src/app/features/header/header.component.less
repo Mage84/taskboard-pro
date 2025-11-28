@@ -1,0 +1,71 @@
+// Import branding tokens
+@import '../../assets/styles/branding.less';
+
+.nav-bar {
+  background-color: @dark;
+  color: @light;
+  padding: @space-sm @space-md;
+  box-shadow: @shadow-sm;
+  position: relative;
+  z-index: @z-index-high;
+
+  .nav-container {
+    .flex-between();
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  // Logo (optional)
+  .logo {
+    img {
+      height: 40px;
+    }
+  }
+
+  // Nav Links
+  .nav-link {
+    color: @light;
+    text-decoration: none;
+    padding: @space-xs @space-sm;
+    margin: 0 @space-xs;
+    border-radius: @border-radius-sm;
+    transition: @transition-normal;
+    font-weight: @font-weight-medium;
+    position: relative;
+
+    &:hover {
+      color: @primary;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    &.active {
+      color: @secondary;
+      font-weight: @font-weight-bold;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: @border-width-sm;
+        background-color: @secondary;
+      }
+    }
+  }
+}
+
+// Mobile Responsiveness
+.mobile() {
+  .nav-bar {
+    .nav-container {
+      justify-content: space-around;
+    }
+
+    .nav-link {
+      margin: 0;
+      padding: @space-xs;
+    }
+  }
+}

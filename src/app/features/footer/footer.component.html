@@ -1,0 +1,29 @@
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Links Section -->
+    <div class="footer-links">
+      <a [routerLink]="['/']" class="footer-link">Home</a>
+      <a [routerLink]="['/about']" class="footer-link">About</a>
+      <a [routerLink]="['/tasks']" class="footer-link">Tasks</a>
+      <a href="mailto:contact@example.com" class="footer-link">Contact</a>
+    </div>
+
+    <!-- Social Icons (optional) -->
+    <div class="social-icons">
+      <a href="#" aria-label="Twitter" class="social-icon">
+        <span>𝕏</span>
+      </a>
+      <a href="#" aria-label="GitHub" class="social-icon">
+        <span>GitHub</span>
+      </a>
+      <a href="#" aria-label="LinkedIn" class="social-icon">
+        <span>in</span>
+      </a>
+    </div>
+
+    <!-- Copyright -->
+    <div class="copyright">
+      &copy; {{ currentYear }} Task Boards co. ltd. | All rights reserved.
+    </div>
+  </div>
+</footer>

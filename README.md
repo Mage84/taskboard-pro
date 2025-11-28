@@ -25,3 +25,10 @@ Start app : ng serve (or in my case 'npm start' but that's just my preference)
 - Pas besoin d'appeler 'getTask()' à chaque fois : la donnée est **vivante**.
 - '| async' gère l'abonnement et le désabonnement automatiquement;
 - Le flux reste cohérent entre le service et la vue.
+
+## Séquence 3 : Lasy Loading
+### 1. Lazy loading ?
+Permet de ne pas charger la totalité de l'app à l'arrivée sur la landing-page. Celà permet de réduire le poids / la complexité de l'application pour le navigateur la rendant plus rapide. C'est mis en place par un systeme permettant de ne charger les routes dont l'application a besoin pour afficher à l'utilisateur les pages / fonctionnalités qu'il consulte / dont l'app à besoin pour afficher ce que l'utilisateur demande.
+
+### 2. Structure
+L'utilisation d'une architecture découpée par feature est generalement utilisié quand on implement le lazy loading. Cela permet de mettre en place ce systeme par feature pour limiter l'utilisation de ressources aux features nécéssaires pour accomplir les actions que demande l'utilisateur. On va donc ajouter un fichier de route (ex. my-feature.routes.ts) pour permettre la mise en place d'un lazy loading par feature.

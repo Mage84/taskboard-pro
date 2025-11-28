@@ -1,0 +1,20 @@
+<div class="tasks-container">
+  @if (tasks$ | async; as tasks) {
+    <ul class="tasks-list">
+      @for (task of tasks; track task.id) {
+        <li class="task-item">
+          {{ task.title }}
+        </li>
+      }
+    </ul>
+  } @else {
+    <p class="loading-message">Chargement des tâches ...</p>
+  }
+
+  <div class="actions">
+    <h3 class="actions-title">Actions</h3>
+    <button class="btn btn-primary" (click)="addTask('Nouvelle tâche')">
+      Ajouter une tâche
+    </button>
+  </div>
+</div>

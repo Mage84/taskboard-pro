@@ -1,0 +1,76 @@
+// Import branding tokens
+@import '../../assets/styles/branding.less';
+
+.footer {
+  background-color: @dark;
+  color: @light;
+  padding: @space-lg;
+  border-top: @border-width-sm solid rgba(255, 255, 255, 0.1);
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: @space-md;
+  }
+
+  // Links Section
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: @space-md;
+
+    .footer-link {
+      color: @light;
+      text-decoration: none;
+      padding: @space-xs;
+      transition: @transition-normal;
+
+      &:hover {
+        color: @primary;
+      }
+    }
+  }
+
+  // Social Icons
+  .social-icons {
+    display: flex;
+    gap: @space-sm;
+
+    .social-icon {
+      color: @light;
+      text-decoration: none;
+      width: 36px;
+      height: 36px;
+      border-radius: @border-radius-circle;
+      background-color: rgba(255, 255, 255, 0.1);
+      .flex-center();
+      transition: @transition-normal;
+
+      &:hover {
+        background-color: @primary;
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  // Copyright
+  .copyright {
+    font-size: @font-size-xs;
+    opacity: 0.8;
+    text-align: center;
+  }
+}
+
+// Mobile Responsiveness
+.mobile() {
+  .footer {
+    .footer-links {
+      flex-direction: column;
+      gap: @space-sm;
+    }
+  }
+}
