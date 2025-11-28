@@ -13,8 +13,11 @@
 
   <div class="actions">
     <h3 class="actions-title">Actions</h3>
-    <button class="btn btn-primary" (click)="addTask('Nouvelle tâche')">
-      Ajouter une tâche
-    </button>
+    <form [formGroup]="taskForm">
+      <input type="text" name="taskName" id="taskName" formControlName="name" placeholder="Titre de la tâche">
+      <button class="btn btn-primary" (click)="addTask()">
+        Ajouter une tâche
+      </button>
+    </form>
   </div>
 </div>
