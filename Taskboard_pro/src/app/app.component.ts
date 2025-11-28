@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 
 @Component({
@@ -7,6 +7,8 @@ import { HeaderComponent } from './header/header.component';
   imports: [
     RouterOutlet,
     HeaderComponent,
+    RouterLink,
+    RouterLinkActive
   ],
 
   templateUrl: './app.component.html',
