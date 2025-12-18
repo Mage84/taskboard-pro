@@ -4,6 +4,10 @@
       @for (task of tasks; track task.id) {
         <li class="task-item">
           {{ task.title }}
+          <button type="button" (click)="highlight(task)">
+            Mettre en avant
+          </button>
+          <button type="button" (click)="deleteTask(task.id)">Supprimer</button>
         </li>
       }
     </ul>
@@ -20,4 +24,7 @@
       </button>
     </form>
   </div>
+
+  <!-- Zone d'injection du composant dynamique -->
+  <div #highlightContainer></div>
 </div>
