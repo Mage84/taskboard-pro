@@ -32,3 +32,10 @@ Permet de ne pas charger la totalité de l'app à l'arrivée sur la landing-page
 
 ### 2. Structure
 L'utilisation d'une architecture découpée par feature est generalement utilisié quand on implement le lazy loading. Cela permet de mettre en place ce systeme par feature pour limiter l'utilisation de ressources aux features nécéssaires pour accomplir les actions que demande l'utilisateur. On va donc ajouter un fichier de route (ex. my-feature.routes.ts) pour permettre la mise en place d'un lazy loading par feature.
+
+### 3. Composant dynamique
+C'est un composant qui peut être chargé, affiché ou modifié à la volée, c’est-à-dire pendant l’exécution de l’application, en fonction de certaines conditions ou données. Contrairement à un composant statique (toujours affiché de la même manière), un composant dynamique permet de changer de contenu ou de comportement sans recharger la page.
+
+### 4. ViewContainerRef + createComponent()
+**ViewContainerRef** représente un conteneur dans le DOM où tu peux ajouter, supprimer ou manipuler des composants dynamiquement.
+**createComponent()** permet de créer une instance d’un composant et de l’ajouter au conteneur (ViewContainerRef)
