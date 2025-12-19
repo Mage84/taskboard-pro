@@ -4,10 +4,10 @@
       @for (task of tasks; track task.id) {
         <li class="task-item">
           {{ task.title }}
-          <button type="button" (click)="highlight(task)">
+          <button type="button" data-testid="hilioght-btn" (click)="highlight(task)">
             Mettre en avant
           </button>
-          <button type="button" (click)="deleteTask(task.id)">Supprimer</button>
+          <button type="button" data-testid="delete-btn" (click)="deleteTask(task.id)">Supprimer</button>
         </li>
       }
     </ul>
