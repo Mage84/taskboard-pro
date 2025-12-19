@@ -1,5 +1,5 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, inject, OnDestroy, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, inject, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Task } from '../../core/model/task';
@@ -10,9 +10,9 @@ import { TaskHighlightComponent } from '../task-highlight/task-highlight.compone
   selector: 'app-task',
   imports: [AsyncPipe, ReactiveFormsModule],
   templateUrl: './task.component.html',
-  styleUrl: './task.component.less'
+  styleUrl: './task.component.less',
 })
-export class TaskComponent implements OnInit, OnDestroy {
+export class TaskComponent {
   @ViewChild('highlightContainer', { read: ViewContainerRef })
   container!: ViewContainerRef;
 
@@ -24,9 +24,6 @@ export class TaskComponent implements OnInit, OnDestroy {
   });
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
   addTask(): void {
     const form = this.taskForm.get('name')
@@ -50,8 +47,5 @@ export class TaskComponent implements OnInit, OnDestroy {
 
     // Passe les données au composant
     ref.instance.title = task.title;
-  }
-
-  ngOnDestroy(): void {
   }
 }

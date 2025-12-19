@@ -50,6 +50,7 @@ export class TaskService {
   toggleTask(id: number): void {
     const task = this.tasks.find((task) => {
       task.id === id
+      return task
     })
     if (task) {
       task.completed = true

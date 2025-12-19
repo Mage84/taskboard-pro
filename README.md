@@ -39,3 +39,84 @@ C'est un composant qui peut être chargé, affiché ou modifié à la volée, c�
 ### 4. ViewContainerRef + createComponent()
 **ViewContainerRef** représente un conteneur dans le DOM où tu peux ajouter, supprimer ou manipuler des composants dynamiquement.
 **createComponent()** permet de créer une instance d’un composant et de l’ajouter au conteneur (ViewContainerRef)
+
+## Séquence 4 — Tests Unitaires Angular
+### 📚 Ce que j'ai appris
+#### 1. Pourquoi tester ?
+- Les tests permettent de garantir la stabilité du code, détecter les régressions, et faciliter la maintenance. Ils documentent aussi le comportement attendu du code.
+- Sans tests, le risque est d’introduire des bugs à chaque modification, de ralentir les livraisons, et de perdre la confiance des utilisateurs.
+- Exemple concret : **Au travail** La modification d'une methode d'un service pour une nouvell fonctionnalité à cassé le fonctionnement de plusieurs composants. Sans tests l'erreur aurrait pu arriver en production.
+
+#### 2. Outils utilisés
+- **Jasmine** : Framework de tests unitaires, permet d’écrire des tests clairs et expressifs.
+- **Karma** : Exécuteur de tests, lance les tests dans différents navigateurs.
+- **TestBed** : Environnement de test Angular, simule un module Angular pour tester les composants.
+
+#### 3. Concepts clés maîtrisés
+- **AAA Pattern** : Structure les tests en 3 phases : préparation (Arrange), exécution (Act), vérification (Assert).
+- **Mocks** : Simulent des dépendances (ex : services HTTP) pour isoler le code testé.
+- **Spies** : Espionnent les appels de fonction pour vérifier leur comportement (ex : *spyOn*).
+- **Fixture & detectChanges()** : Permettent de manipuler et mettre à jour le DOM virtuel pendant les tests.
+
+#### 4. Types de tests pratiqués
+- ✅ Test d'un service
+- ✅ Test d'un composant avec TestBed
+- ✅ Test des @Input
+- ✅ Test du DOM
+
+#### 5. Erreurs courantes rencontrées
+- Oublier `detectChanges()` : Les changements peuvent ne pas avoir été pris en compte.
+- `No provider for...` : Déclarer le service dans le *TestBed.configureTestingModule({ providers: [...] })*.
+- Tests qui dépendent les uns des autres : Utiliser *beforeEach* pour réinitialiser l’état avant chaque test et *afterEach* pour effectuer des operations apres les tests si nécessaire.
+
+#### 6. Commandes importantes
+```bash
+ng test                    # Lancer les tests
+ng test --code-coverage    # Avec rapport de couverture
+```
+
+#### 7. Code Coverage atteint
+- Objectif : 70-80%
+- Mon résultat : **100%** sur TaskBoard Pro (unitaire uniquement)
+
+=============================== Coverage summary ===============================
+Statements   : 100% ( 51/51 )
+Branches     : 100% ( 3/3 )
+Functions    : 100% ( 14/14 )
+Lines        : 100% ( 46/46 )
+================================================================================
+
+#### 8. Difficultés rencontrées et solutions
+| Difficulté | Solution trouvée |
+|------------|------------------|
+|    None    |       None       |
+
+#### 9. Points à approfondir
+- [X] Tests d'intégration
+- [X] Tests E2E avec Cypress
+- [X] Mocking avancé pour HttpClient
+- [X] Tests de services asynchrones
+(Déjà fait au travail mais pas en cours)
+
+### 🎯 Projet : Tests TaskBoard Pro
+#### Tests implémentés
+- [x] TaskService
+- ✅ `addTask()`
+- ✅ `deleteTask()`
+- ✅ `getTasks()`
+- [x] TaskHighlight Component
+- ✅ Affichage du titre
+- ✅ @Input title
+- ✅ Rendu dans le DOM
+(Et plusd encore mais flemme de tout lister)
+
+#### Résultats
+- **Tests réussis** : 30 / 30
+- **Code coverage** : 100%
+- **Temps d'exécution** : 0.141 secondes
+
+### 💡 Réflexion personnelle
+C'est déjà ce que je fait au travail donc je ne sais pas trop quoi dire.
+
+### 📚 Ressources consultées
+- [Notes de cours - Séquence 1 à 4]
